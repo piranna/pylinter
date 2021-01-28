@@ -1,4 +1,4 @@
-name: python-linter
+name: pylinter
 author: Alexander Damiani
 description: Lint python projects with flake8, mypy, and isort. The build will fail on violations.
 
