@@ -22,7 +22,7 @@ Enforce python linting on commits and pull requests.
 	* flags to run with `flake8` command
 
 * `mypy-flags`
-	* flags to run with `flake8` command
+	* flags to run with `mypy` command
 
 * `fail-on-isort`
 	* whether to fail job if `isort` changes needed
