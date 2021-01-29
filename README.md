@@ -87,7 +87,7 @@ jobs:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
         mypy-flags: '--ignore-missing-imports'
-        fail-on-isort: true
+        fail-on-isort: false
 
     - name: commit isort changes
       run: |
