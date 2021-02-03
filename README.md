@@ -29,6 +29,21 @@ Enforce python linting on commits and pull requests.
 
 	* if set to `false`, isort will run and modify necessary files (auto-commit, shown below, can then be run to push changes)
 
+* `skip-flake8`
+	* whether to skip `flake8` checks
+
+	* if set to `true`, job will not fail on `flake8` errors
+
+* `skip-mypy`
+	* whether to skip `mypy` checks
+
+	* if set to `true`, job will not fail on `mypy` errors
+
+* `skip-isort`
+	* whether to skip `isort` checks
+
+	* if set to `true`, job will not fail on `isort` errors
+
 ## Outputs
 Print associated errors with failed job. The order of linters are `flake8`, `mypy`, `isort`. If any linter fails, the job will fail and no subsequent linters will run.
 
