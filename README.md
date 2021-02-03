@@ -98,16 +98,15 @@ jobs:
     - name: push isort changes
       uses: ad-m/github-push-action@v0.5.0
       with:
-        github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
 ```
+---
 
-## ENV Vars
-* `GH_ACCESS_TOKEN`
+## GITHUB_TOKEN
+Included by default in every workflow to give access to the repo the workflow is running in. Does **not** need to be configured manually.
 
-	* https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
-
-	* Necessary to auto-commit/push `isort` changes
+https://docs.github.com/en/actions/reference/authentication-in-a-workflow
 
 ## License
 [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt)
