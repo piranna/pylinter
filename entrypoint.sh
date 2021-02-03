@@ -9,7 +9,7 @@
 # $6: skip-mypy
 # $7: skip-isort
 
-if [ "$5" = false]; then
+if [ "$5" = false ]; then
   FLAKE8_ERRORS=$(python3 -m flake8 $2 $1)
   exit_code=$?
 
@@ -19,7 +19,7 @@ if [ "$5" = false]; then
   fi
 fi
 
-if [ "$6" = false]; then
+if [ "$6" = false ]; then
   # mypy by default doesn't recurse, have to do manually
   MYPY_ERRORS=$(find $1 -name "*.py" | xargs mypy $3)
   exit_code=$?
@@ -30,7 +30,7 @@ if [ "$6" = false]; then
   fi
 fi
 
-if [ "$7" = false]; then
+if [ "$7" = false ]; then
   # --diff gives list of changes to apply
   # no error code, so have to check if changes include import/from changes
   ISORT_ERRORS=$(isort $1 --diff)
