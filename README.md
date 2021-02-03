@@ -101,7 +101,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
 ```
----
 
 ## GITHUB_TOKEN
 Included by default in every workflow to give access to the repo the workflow is running in. Does **not** need to be configured manually.
