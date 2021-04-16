@@ -125,4 +125,4 @@ Included by default in every workflow to give access to the repo the workflow is
 https://docs.github.com/en/actions/reference/authentication-in-a-workflow
 
 ## License
-[MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt)
+[BSD 3-Clause License](https://github.com/alexanderdamiani/pylinter/blob/main/LICENSE)
