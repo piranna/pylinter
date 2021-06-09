@@ -10,7 +10,7 @@
 # $7: skip-isort
 
 if [ "$5" = false ]; then
-  FLAKE8_ERRORS=$(python3 -m flake8 "$2" $1)
+  FLAKE8_ERRORS=$(python3 -m flake8 $2 "$1")
   exit_code=$?
 
   if [ "$exit_code" != "0" ]; then
