@@ -34,6 +34,10 @@ inputs:
     description: 'skip isort checks'
     required: false
     default: false
+  requirements-file:
+    description: 'requirements filepath for project for mypy to prevent library stub missing errors'
+    required: false
+    default: 'requirements.txt'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -45,3 +49,4 @@ runs:
     - ${{ inputs.skip-flake8 }}
     - ${{ inputs.skip-mypy }}
     - ${{ inputs.skip-isort }}
+    - ${{ inputs.requirements-file }}
