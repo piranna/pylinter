@@ -44,6 +44,15 @@ Enforce python linting on commits and pull requests.
 
 	* if set to `true`, job will not fail on `isort` errors
 
+* `requirements-file`
+	* requirements filepath needed to prevent `mypy` errors `Library stubs are missing for package ...`
+
+	* **ONLY** need to include the missing library stubs (example: `types-pyyaml`)
+
+	* it is recommended to create a seprate `requirements_stubs.txt` to use as input to prevent unnecessarily long execution time
+
+	* if left empty will default to `requirements.txt`
+
 ## Outputs
 Print associated errors with failed job. The order of linters are `flake8`, `mypy`, `isort`. If any linter fails, the job will fail and no subsequent linters will run.
 
