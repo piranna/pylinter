@@ -8,6 +8,7 @@
 # $5: skip-flake8
 # $6: skip-mypy
 # $7: skip-isort
+# $8: requirements filepath
 
 if [ "$5" = false ]; then
   FLAKE8_ERRORS=$(python3 -m flake8 $2 "$1")
@@ -20,6 +21,11 @@ if [ "$5" = false ]; then
 fi
 
 if [ "$6" = false ]; then
+  # must install stubs here to prevent mypy error "Missing library stubs"
+  if test -f "$8"; then
+      $(python3 -m pip install -r $8 --no-cache-dir)
+  fi
+
   # mypy by default doesn't recurse, have to do manually
   MYPY_ERRORS=$(find "$1" -name "*.py" -print0 | xargs -0 mypy $3)
   exit_code=$?
