@@ -37,7 +37,7 @@ inputs:
   requirements-file:
     description: 'requirements filepath for project for mypy to prevent library stub missing errors'
     required: false
-    default: 'requirements.txt'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
