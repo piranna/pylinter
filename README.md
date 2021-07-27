@@ -51,7 +51,7 @@ Enforce python linting on commits and pull requests.
 
 	* it is recommended to create a seprate `requirements_stubs.txt` to use as input to prevent unnecessarily long execution time
 
-	* if left empty will default to `requirements.txt`
+  * default value is an emtpy string, meaning nothing is installed
 
 ## Outputs
 Print associated errors with failed job. The order of linters are `flake8`, `mypy`, `isort`. If any linter fails, the job will fail and no subsequent linters will run.
