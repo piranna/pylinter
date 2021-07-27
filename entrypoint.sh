@@ -23,7 +23,10 @@ fi
 if [ "$6" = false ]; then
   # must install stubs here to prevent mypy error "Missing library stubs"
   if test -f "$8"; then
+    # only run if requirements file present and not blank (default arg)
+    if [ -f $8 ]; then
       $(python3 -m pip install -r $8 --no-cache-dir --user)
+    fi
   fi
 
   # mypy by default doesn't recurse, have to do manually
