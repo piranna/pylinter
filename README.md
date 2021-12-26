@@ -100,6 +100,7 @@ jobs:
         flake8-flags: '--count --show-source --statistics'
         mypy-flags: '--ignore-missing-imports'
         fail-on-isort: true
+        mypy-ignore-dirs-files: 'folder1 folder2/main.py'
 ```
 
 ### Auto-commit/push `isort` changes
