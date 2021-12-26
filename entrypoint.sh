@@ -24,8 +24,6 @@ fi
 mypy_omit_str=''
 mypy_omit_arr=($8)  # convert input str to array
 
-echo "mypy_omit_arr" $mypy_omit_arr
-
 # if .py file just append, if dir iterate each py file in dir
 for val in ${mypy_omit_arr[@]}; do
     if [[ $val == *.py ]]; then
@@ -37,8 +35,6 @@ for val in ${mypy_omit_arr[@]}; do
         done
     fi
 done
-
-echo "mypy_omit_str" $mypy_omit_str
 
 if [ "$6" = false ]; then
   # must install stubs here to prevent mypy error "Missing library stubs"
