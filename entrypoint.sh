@@ -22,7 +22,10 @@ if [ "$5" = false ]; then
 fi
 
 mypy_omit_str=''
-for val in ${myarray[@]}; do
+mypy_omit_arr=($8)  # convert input str to array
+
+# if .py file just append, if dir iterate each py file in dir
+for val in ${mypy_omit_arr[@]}; do
     if [[ $val == *.py ]]; then
         mypy_omit_str+=" ! -path ./$val"
     else
