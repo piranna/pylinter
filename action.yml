@@ -34,6 +34,10 @@ inputs:
     description: 'skip isort checks'
     required: false
     default: false
+  mypy-ignore-dirs-files:
+    description: 'list of directories and/or files to ignore for mypy. separate with spaces'
+    required: false
+    default: ''
   requirements-file:
     description: 'requirements filepath for project for mypy to prevent library stub missing errors'
     required: false
@@ -49,4 +53,5 @@ runs:
     - ${{ inputs.skip-flake8 }}
     - ${{ inputs.skip-mypy }}
     - ${{ inputs.skip-isort }}
+    - ${{ inputs.mypy-ignore-dirs-files }}
     - ${{ inputs.requirements-file }}

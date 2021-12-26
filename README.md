@@ -1,5 +1,3 @@
-Copyright (c) 2021, Alexander Damiani
-
 # pylinter
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python)
@@ -15,51 +13,58 @@ Enforce python linting on commits and pull requests.
 * [`isort`](https://pypi.org/project/isort/)
 
 ## Optional Inputs
-* `python-root`
-	* directory to run linters on
 
-	* by default `mypy` does not run recursively, but will here
+* `python-root`
+  * directory to run linters on
+
+  * by default `mypy` does not run recursively, but will here
 
 * `flake8-flags`
-	* flags to run with `flake8` command
+  * flags to run with `flake8` command
 
 * `mypy-flags`
-	* flags to run with `mypy` command
+  * flags to run with `mypy` command
 
 * `fail-on-isort`
-	* whether to fail job if `isort` changes needed
+  * whether to fail job if `isort` changes needed
 
-	* if set to `false`, isort will run and modify necessary files (auto-commit, shown below, can then be run to push changes)
+  * if set to `false`, isort will run and modify necessary files (auto-commit, shown below, can then be run to push changes)
 
 * `skip-flake8`
-	* whether to skip `flake8` checks
+  * whether to skip `flake8` checks
 
-	* if set to `true`, job will not fail on `flake8` errors
+  * if set to `true`, job will not fail on `flake8` errors
 
 * `skip-mypy`
-	* whether to skip `mypy` checks
+  * whether to skip `mypy` checks
 
-	* if set to `true`, job will not fail on `mypy` errors
+  * if set to `true`, job will not fail on `mypy` errors
 
 * `skip-isort`
-	* whether to skip `isort` checks
+  * whether to skip `isort` checks
 
-	* if set to `true`, job will not fail on `isort` errors
+  * if set to `true`, job will not fail on `isort` errors
+
+* `mypy-ignore-dirs-files`
+  * list of directories and/or files to ignore for mypy. separate with spaces
 
 * `requirements-file`
-	* requirements filepath needed to prevent `mypy` errors `Library stubs are missing for package ...`
+  * requirements filepath needed to prevent `mypy` errors `Library stubs are missing for package ...`
 
-	* **ONLY** need to include the missing library stubs (example: `types-pyyaml`)
+  * **ONLY** need to include the missing library stubs (example: `types-pyyaml`)
 
-	* it is recommended to create a seprate `requirements_stubs.txt` to use as input to prevent unnecessarily long execution time
+  * it is recommended to create a seprate `requirements_stubs.txt` to use as input to prevent unnecessarily long execution time
 
   * default value is an emtpy string, meaning nothing is installed
 
 ## Outputs
+
 Print associated errors with failed job. The order of linters are `flake8`, `mypy`, `isort`. If any linter fails, the job will fail and no subsequent linters will run.
 
 ## Quick Start
+
 ### Default (no flags)
+
 ```yaml
 on: [push, pull_request]
 
@@ -76,6 +81,7 @@ jobs:
 ```
 
 ### Optional flags
+
 ```yaml
 on: [push, pull_request]
 
@@ -95,7 +101,9 @@ jobs:
         mypy-flags: '--ignore-missing-imports'
         fail-on-isort: true
 ```
+
 ### Auto-commit/push `isort` changes
+
 ```yaml
 on: [push, pull_request]
 
@@ -129,9 +137,9 @@ jobs:
 ```
 
 ## GITHUB_TOKEN
-Included by default in every workflow to give access to the repo the workflow is running in. Does **not** need to be configured manually.
 
-https://docs.github.com/en/actions/reference/authentication-in-a-workflow
+Included by default in every workflow to give access to the repo the workflow is running in. Does **not** need to be configured manually. [Reference](https://docs.github.com/en/actions/reference/authentication-in-a-workflow)
 
 ## License
+
 [BSD 3-Clause License](https://github.com/alexanderdamiani/pylinter/blob/main/LICENSE)
