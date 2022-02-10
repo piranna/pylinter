@@ -36,14 +36,12 @@ for val in ${mypy_omit_arr[@]}; do
     fi
 done
 
-
-
 if [ "$6" = false ]; then
   # must install stubs here to prevent mypy error "Missing library stubs"
   if test -f "$9"; then
     # only run if requirements file present and not blank (default arg)
     if [ -f $9 ]; then
-      $(python3 -m pip install -r $9 --no-cache-dir --user)
+      $(python3 -m pip install -r $9 --no-cache-dir)
     fi
   fi
 
