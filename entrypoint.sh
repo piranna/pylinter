@@ -36,6 +36,8 @@ for val in ${mypy_omit_arr[@]}; do
     fi
 done
 
+
+
 if [ "$6" = false ]; then
   # must install stubs here to prevent mypy error "Missing library stubs"
   if test -f "$9"; then
