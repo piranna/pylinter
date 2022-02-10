@@ -41,7 +41,7 @@ if [ "$6" = false ]; then
   if test -f "$9"; then
     # only run if requirements file present and not blank (default arg)
     if [ -f $9 ]; then
-      $(python3 -m pip3 install -r $9 --no-cache-dir)
+      $(python -m pip3 install -r $9 --no-cache-dir)
     fi
   fi
 
