@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 # --- Parameters --- #
 # $1: python-root
