@@ -77,7 +77,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.0
+      uses: alexanderdamiani/pylinter@v1.4.2
 ```
 
 ### Optional flags
@@ -94,7 +94,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.0
+      uses: alexanderdamiani/pylinter@v1.4.2
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
@@ -117,7 +117,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.0
+      uses: alexanderdamiani/pylinter@v1.4.2
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
