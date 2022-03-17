@@ -77,7 +77,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.2
+      uses: programmingwithalex/pylinter@v1.4.2
 ```
 
 ### Optional flags
@@ -94,7 +94,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.2
+      uses: programmingwithalex/pylinter@v1.4.2
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
@@ -117,7 +117,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: linting
-      uses: alexanderdamiani/pylinter@v1.4.2
+      uses: programmingwithalex/pylinter@v1.4.2
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
@@ -143,4 +143,4 @@ Included by default in every workflow to give access to the repo the workflow is
 
 ## License
 
-[BSD 3-Clause License](https://github.com/alexanderdamiani/pylinter/blob/main/LICENSE)
+[BSD 3-Clause License](https://github.com/programmingwithalex/pylinter/blob/main/LICENSE)
